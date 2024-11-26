@@ -1,0 +1,59 @@
+import java.util.*;
+import java.io.*;
+
+class stack_array
+{
+int n = 5;
+int top = -1;
+int[] arr=new int[n];
+
+void push(int num)
+{
+   if(top==n)
+   System.out.println("overflow"); 
+   else
+   {
+      top++;
+      arr[top] = num;
+      System.out.println("Data pushed successfully.");
+   }
+}
+
+void pop()
+{
+    if(top==-1)
+    System.out.println("Underflow");
+    else
+    {
+       top--;
+       System.out.println("Data pop successfully.");
+    }
+}
+
+void display()
+{
+    if(top==-1)
+    System.out.println("Stack is empty");
+    else
+    {
+      for(int i=0;i<n;i++)
+      { System.out.println(arr[i]); }
+    }
+}
+
+public static void main(String[] args)
+{
+   stack_array obj = new stack_array();
+   obj.push(10);
+   obj.push(20);
+obj.pop();
+obj.push(30);
+obj.push(40);
+obj.pop();
+obj.push(50);
+//obj.push(60);  //overflow;
+obj.display();
+//obj.pop(); //underflow
+}
+ 
+}
