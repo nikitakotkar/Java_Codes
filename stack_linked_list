@@ -1,0 +1,51 @@
+import java.util.*;
+import java.io.*;
+
+class stack_linked_list
+{
+
+class node{
+    int data;
+    node next = null;
+}
+
+node top = null;
+
+void push(int num)
+{
+   node new_node=new node();
+   new_node.data = num;
+   new_node.next = top;
+   top = new_node;
+   System.out.println("Pushed");
+}
+
+void pop()
+{
+   top = top.next;
+   System.out.println("Popped");
+}
+
+void display()
+{
+   node temp = top; 
+   while(temp!=null)
+   {
+      System.out.print(" "+temp.data);
+      temp=temp.next;
+   }
+}
+
+
+public static void main(String[] args)
+{
+stack_linked_list obj = new stack_linked_list();
+obj.push(10);
+obj.push(20);
+obj.push(30);
+obj.push(40);
+obj.pop();
+obj.display();
+}
+
+}
